@@ -1,0 +1,15 @@
+
+body {
+  margin: 0;
+  direction: rtl;
+  font-family: "Vazirmatn", sans-serif !important;
+  background-color: #f5f5f5;
+}
+@font-face {
+  font-family: "Vazirmatn" !important;
+  src: url("/fonts/Vazirmatn-Regular.woff2") format("woff2");
+}
+div{
+    font-family: "Vazirmatn", sans-serif !important;
+
+}

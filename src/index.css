@@ -1,0 +1,32 @@
+@import "tailwindcss";
+body {
+  margin: 0;
+  direction: rtl;
+  font-family: "Vazirmatn", sans-serif;
+  background-color: #f5f5f5;
+}
+:where(.css-dev-only-do-not-override-1pi45l5).ant-form-item-vertical .ant-form-item-label >label, :where(.css-dev-only-do-not-override-1pi45l5).ant-form-item-vertical .ant-col-24.ant-form-item-label >label, :where(.css-dev-only-do-not-override-1pi45l5).ant-form-item-vertical .ant-col-xl-24.ant-form-item-label >label {
+    margin: 0;
+    font-size: 20px;
+      font-family: "Vazirmatn", sans-serif;
+
+}
+.ant-typography{
+        font-family: "Vazirmatn", sans-serif;
+
+}
+div{
+    font-family: "Vazirmatn", sans-serif !important;
+
+}
+:where(.css-dev-only-do-not-override-1pi45l5).ant-btn.ant-btn-color-primary.ant-btn-variant-solid 
+ {
+          font-family: "Vazirmatn", sans-serif;
+
+}
+@font-face {
+  font-family: "Vazirmatn" !important;
+  src: url("/fonts/Vazirmatn-Regular.woff2") format("woff2");
+}
+.ant-menu-item{
+  font-family: "Vazirmatn" !important;}
