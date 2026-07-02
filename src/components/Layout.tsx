@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Layout as AntLayout, Menu, Dropdown, Avatar } from "antd";
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 import {
@@ -8,56 +9,51 @@ import {
 
 const { Header, Sider, Content } = AntLayout;
 
+import { useImage } from "../hooks/useImage";
+import { RiDashboardFill, RiSunFill, RiMoonFill } from "react-icons/ri";
+
 export default function Layout() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { data: image, isLoading, isError } = useImage();
 
-  const selectedKey = location.pathname.replace("/", "") || "home";
 
-  const items = [
-    {
-      key: "home",
-      label: <Link to="/">خانه</Link>,
-    },
-    {
-      key: "about",
-      label: <Link to="/about">درباره ما</Link>,
-    },
-    {
-      key: "contact",
-      label: <Link to="/contact">تماس با ما</Link>,
-    },
-  ];
+  const selectedKey = location.pathname;
 
   const handleLogout = () => {
     navigate("/login");
   };
 
+  
+
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>خطا در دریافت تصویر</div>;
+
   return (
     <AntLayout style={{ minHeight: "100vh", direction: "rtl" }}>
-      <Sider breakpoint="lg" collapsedWidth="0" theme="light">
+      
+      {/* SIDEBAR */}
+      <Sider
+        breakpoint="lg"
+        collapsedWidth="0"
+       
+      >
         <div
           style={{
             padding: 16,
-            textAlign: "center",
-            background: "#fff",
-            borderBottom: "1px solid #eee",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             gap: 8,
+            borderBottom: "1px solid #eee",
           }}
         >
           <img
-            src="/maxonir.png"
-            alt="MaxonIR Logo"
-            style={{
-              width: 52,
-              height: 52,
-              borderRadius: "50%",
-            }}
+            src={image}
+            alt="logo"
+            style={{ width: 50, height: 50, borderRadius: "50%" }}
           />
-          <span style={{ fontWeight: "bold", fontSize: 16 }}>
+          <span style={{  fontWeight: "bold" }}>
             پنل ادمین
           </span>
         </div>
@@ -65,65 +61,72 @@ export default function Layout() {
         <Menu
           mode="inline"
           selectedKeys={[selectedKey]}
-          items={items}
-          style={{ textAlign: "right" }}
+      
+          items={[
+            {
+              key: "/",
+              icon: <RiDashboardFill />,
+              label: <Link to="/">داشبورد</Link>,
+            },
+          ]}
         />
       </Sider>
 
+      {/* MAIN */}
       <AntLayout>
-        <Header
-          style={{
-            background: "#fff",
-            padding: "0 24px",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            borderBottom: "1px solid #eee",
-          }}
-        >
-          <div />
 
-          <Dropdown
-            placement="bottomLeft"
-            trigger={["click"]}
-            menu={{
-              items: [
-                {
-                  key: "logout",
-                  icon: <LogoutOutlined />,
-                  label: "خروج",
-                  onClick: handleLogout,
-                },
-              ],
-            }}
-          >
-            <div
-              style={{
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                gap: 8,
-              }}
-            >
-              <Avatar icon={<UserOutlined />} />
-              <span>کاربر</span>
-              <DownOutlined />
-            </div>
-          </Dropdown>
-        </Header>
+        {/* HEADER */}
+      <Header
+  style={{
+    display: "flex",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    padding: "0 24px",
+    borderBottom: "1px solid #eee",
+    background: "#fff",
+  }}
+>
+  <Dropdown
+    placement="bottomLeft"
+    trigger={["click"]}
+    menu={{
+      items: [
+        {
+          key: "logout",
+          icon: <LogoutOutlined />,
+          label: "خروج",
+          onClick: handleLogout,
+        },
+      ],
+    }}
+  >
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: 8,
+        cursor: "pointer",
+      }}
+    >
+      <Avatar icon={<UserOutlined />} />
+      <span>کاربر</span>
+      <DownOutlined />
+    </div>
+  </Dropdown>
+</Header>
 
+        {/* CONTENT */}
         <Content
           style={{
             margin: 24,
             padding: 24,
-            background: "#fff",
             borderRadius: 8,
             minHeight: 280,
-            textAlign: "right",
           }}
         >
           <Outlet />
         </Content>
+
       </AntLayout>
     </AntLayout>
   );

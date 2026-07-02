@@ -6,16 +6,22 @@ import Layout from "./components/Layout";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
-import Home from "./pages/Home";
+import Home from "./pages/Dashboard";
 import Signup from "./pages/Signup";
+import Dashboard from "./pages/Dashboard";
+import { useEffect, useState } from "react";
 
 function App() {
+  
+
+  
+
   return (
     <ConfigProvider
       direction="rtl"
       locale={faIR}
-      theme={{ algorithm: theme.defaultAlgorithm }}
-    >
+    
+>
       <Router>
         <Routes>
 
@@ -23,9 +29,8 @@ function App() {
           <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
 
-          {/* صفحات داخل Layout */}
           <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
+            <Route index element={<Dashboard />} />
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
           </Route>

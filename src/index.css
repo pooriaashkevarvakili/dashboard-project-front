@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 body {
   margin: 0;
   direction: rtl;
@@ -11,6 +12,7 @@ body {
       font-family: "Vazirmatn", sans-serif;
 
 }
+
 .ant-typography{
         font-family: "Vazirmatn", sans-serif;
 
@@ -30,3 +32,15 @@ div{
 }
 .ant-menu-item{
   font-family: "Vazirmatn" !important;}
+
+
+/* Layout */
+/* ================= DARK MODE ================= */
+
+:where(.css-dev-only-do-not-override-1pi45l5).ant-layout-header {
+  background-color: #fff !important;
+}
+.ant-layout-sider{
+    background-color: #fff !important;
+
+}
