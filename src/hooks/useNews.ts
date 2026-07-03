@@ -9,7 +9,6 @@ export const useNews = () => {
 
   return {
     dataThree: query.data ?? [],
-    isLoadingThree: query.isLoading,
-    isErrorThree: query.isError,
+
   };
 };

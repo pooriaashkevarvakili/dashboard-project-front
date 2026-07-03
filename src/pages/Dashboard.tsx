@@ -1,22 +1,22 @@
 import { Card, Row, Col, Typography, Button, Table, List, Tag } from "antd";
 
-import { FaWallet, FaBitcoin } from "react-icons/fa6";
+import { FaWallet, FaBitcoin, FaEthereum } from "react-icons/fa6";
 
-import { IoTrendingUp, IoTrendingDown } from "react-icons/io5";
+import { SiSolana, SiBinance } from "react-icons/si";
 import { useWeek } from "../hooks/useWeek";
-import { RiBarChartBoxFill } from "react-icons/ri";
 import Chart from "react-apexcharts";
 import type { ApexOptions } from "apexcharts";
 const { Title, Text } = Typography;
 import { useNews } from "../hooks/useNews";
 import { useTransactionsTable } from "../hooks/useTransactionsTable";
 import { useTransactions } from "../hooks/useTransactions";
+import { useCryptoDescription } from "../hooks/useCryptoDescription";
+import { usePriceChart } from "../hooks/usePriceChart";
 export default function Dashboard() {
-  interface NewsItem {
-    key: number;
-    description: string;
-  }
-  const { data: week, isLoadingFour, isErrorFour } = useWeek();
+  const { data: week } = useWeek();
+  const { data: crypto } = useCryptoDescription();
+
+  const { data: priceChart } = usePriceChart();
 
   const chartOptions: ApexOptions = {
     chart: {
@@ -66,18 +66,20 @@ export default function Dashboard() {
   const chartSeries = [
     {
       name: "دارایی",
-      data: [22000, 25000, 24000, 28000, 32000, 34000, 39000],
+      data: priceChart?.map((item) => item.priceChart) ?? [],
     },
   ];
 
-  const {
-    data: transactionsTable,
-    isLoading,
-    isError,
-  } = useTransactionsTable();
-  const { data: transactions, isLoadingTwo, isErrorTwo } = useTransactions();
-
-  const { dataThree: news, isLoadingThree, isErrorThree } = useNews();
+  const { data: transactionsTable, isLoading } = useTransactionsTable();
+  const { data: transactions } = useTransactions();
+  const icons = {
+    FaWallet,
+    FaBitcoin,
+    FaEthereum,
+    SiSolana,
+    SiBinance,
+  };
+  const { dataThree: news } = useNews();
 
   return (
     <div className="space-y-6">
@@ -94,81 +96,29 @@ export default function Dashboard() {
       </div>
 
       <Row gutter={[16, 16]}>
-        <Col xs={24} md={12} xl={6}>
-          <Card>
-            <div className="flex items-center justify-between">
-              <div>
-                <Text style={{ fontSize: "20px" }} type="secondary">
-                  موجودی کل
-                </Text>
+        {crypto?.map((item) => {
+          const Icon = icons[item.icon as keyof typeof icons] || FaWallet;
 
-                <Title level={3}>$254,820</Title>
+          return (
+            <Col xs={24} md={12} xl={6} key={item.key}>
+              <Card>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <Text style={{ fontSize: 20 }} type="secondary">
+                      {item.title}
+                    </Text>
 
-                <Tag color="green">+12.4%</Tag>
-              </div>
+                    <Title level={3}>{item.price}</Title>
 
-              <FaWallet size={34} className="text-blue-500" />
-            </div>
-          </Card>
-        </Col>
+                    <Tag color="green">{item.priceOne}</Tag>
+                  </div>
 
-        <Col xs={24} md={12} xl={6}>
-          <Card>
-            <div className="flex items-center justify-between">
-              <div>
-                <Text style={{ fontSize: "20px" }} type="secondary">
-                  سود امروز
-                </Text>
-
-                <Title level={3}>+$4,280</Title>
-
-                <Tag color="green">
-                  <IoTrendingUp />
-                  2.3%
-                </Tag>
-              </div>
-
-              <IoTrendingUp size={34} className="text-green-500" />
-            </div>
-          </Card>
-        </Col>
-
-        <Col xs={24} md={12} xl={6}>
-          <Card>
-            <div className="flex items-center justify-between">
-              <div>
-                <Text style={{ fontSize: "20px" }} type="secondary">
-                  بیت‌کوین
-                </Text>
-
-                <Title level={3}>{transactions?.[0]?.price ?? "..."}</Title>
-
-                <Tag color="green">{transactions?.[0]?.amount ?? "..."}</Tag>
-              </div>
-
-              <FaBitcoin size={34} className="text-yellow-500" />
-            </div>
-          </Card>
-        </Col>
-
-        <Col xs={24} md={12} xl={6}>
-          <Card>
-            <div className="flex items-center justify-between">
-              <div>
-                <Text type="secondary">شاخص بازار</Text>
-
-                <Title level={3}>Greed 73</Title>
-
-                <Tag>
-                  <IoTrendingDown />
-                  -0.6%
-                </Tag>
-              </div>
-
-              <RiBarChartBoxFill size={34} className="text-purple-500" />
-            </div>
-          </Card>
-        </Col>
+                  <Icon size={34} className="text-blue-500" />
+                </div>
+              </Card>
+            </Col>
+          );
+        })}
       </Row>
 
       <Row gutter={[16, 16]}>
@@ -182,7 +132,6 @@ export default function Dashboard() {
 
                 <Text type="secondary">۷ روز اخیر</Text>
               </div>
-
             </div>
 
             <Chart

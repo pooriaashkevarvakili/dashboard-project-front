@@ -1,13 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
-import { getWeek } from "../services/week";
-export const useWeek = () => {
+import {getStats} from '../services/stats'
+export const useStats = () => {
   const query = useQuery({
-    queryKey: ["week"],
-    queryFn: getWeek,
+    queryKey: ["stats"],
+    queryFn: getStats,
   });
 
   return {
     data: query.data ?? [],
-   
+
   };
 };

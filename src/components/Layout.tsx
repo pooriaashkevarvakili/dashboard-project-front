@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Layout as AntLayout, Menu, Dropdown, Avatar } from "antd";
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 import {
@@ -10,7 +9,8 @@ import {
 const { Header, Sider, Content } = AntLayout;
 
 import { useImage } from "../hooks/useImage";
-import { RiDashboardFill, RiSunFill, RiMoonFill } from "react-icons/ri";
+import { RiDashboardFill} from "react-icons/ri";
+import { FaWallet } from "react-icons/fa6";
 
 export default function Layout() {
   const location = useLocation();
@@ -68,6 +68,11 @@ export default function Layout() {
               icon: <RiDashboardFill />,
               label: <Link to="/">داشبورد</Link>,
             },
+             {
+    key: "/portfolio",
+    icon: <FaWallet />,
+    label: <Link to="/portfolio">سبد دارایی</Link>,
+  },
           ]}
         />
       </Sider>

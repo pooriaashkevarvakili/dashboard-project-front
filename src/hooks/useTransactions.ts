@@ -14,7 +14,6 @@ export const useTransactions = () => {
   return {
     ...query,
     dataTwo: query.data,
-    isLoadingTwo: query.isLoading,
-    isErrorTwo: query.isError,
+    
   };
 };
