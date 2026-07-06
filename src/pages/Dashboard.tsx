@@ -11,12 +11,12 @@ import { useNews } from "../hooks/useNews";
 import { useTransactionsTable } from "../hooks/useTransactionsTable";
 import { useTransactions } from "../hooks/useTransactions";
 import { useCryptoDescription } from "../hooks/useCryptoDescription";
-import { usePriceChart } from "../hooks/usePriceChart";
+import { useChartSeries } from "../hooks/useChartSeries";
 export default function Dashboard() {
   const { data: week } = useWeek();
   const { data: crypto } = useCryptoDescription();
 
-  const { data: priceChart } = usePriceChart();
+  const { data:chartSeriesNumber } = useChartSeries();
 
   const chartOptions: ApexOptions = {
     chart: {
@@ -66,7 +66,7 @@ export default function Dashboard() {
   const chartSeries = [
     {
       name: "دارایی",
-      data: priceChart?.map((item) => item.priceChart) ?? [],
+      data: chartSeriesNumber?.map((item:any) => item.priceChart) ?? [],
     },
   ];
 

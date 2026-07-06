@@ -1,12 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import api from "../api/axios";
 
-export const usePriceChart = () => {
+export const useHistoryTable = () => {
   return useQuery({
-    queryKey: ["priceChart"],
+    queryKey: ["orderHistoryTable"],
     queryFn: async () => {
       const { data } = await api.get(
-        "/priceChart"
+        "/orderHistoryTable/all"
       );
 
       return data.data;

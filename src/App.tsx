@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import Portfolio from "./pages/Portfolio";
+import AssetDetails from "./pages/AssetDetails";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
 
           <Route path="/" element={<Layout />}>
+          <Route path='assetDetails' element={<AssetDetails/>}/>
             <Route index element={<Dashboard />} />
             <Route path="about" element={<About />} />
             <Route path="portfolio" element={<Portfolio/>}/>

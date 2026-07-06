@@ -21,22 +21,23 @@ import type { ApexOptions } from "apexcharts";
 import { useStats } from "../hooks/useStats";
 import { useRecentTransactions } from "../hooks/useRecentTransactions";
 import { useWeek } from "../hooks/useWeek";
-import { usePriceChart } from "../hooks/usePriceChart";
 import { useCryptoPriceTable } from "../hooks/useCryptoPriceTable";
+import { useChartSeries } from "../hooks/useChartSeries";
 
 const { Title, Text } = Typography;
 
 export default function Portfolio() {
     const { data: week } = useWeek();
-  const { data: priceChart } = usePriceChart();
 const {data:cryptoPriceTable,isLoading} =useCryptoPriceTable()
     const { data: stats } = useStats();
 const { data: recentTransactions } = useRecentTransactions();
+  const { data:chartSeriesNumber } = useChartSeries();
+
  const chartData = {
   series: [
     {
       name: "BTC/USDT",
-      data: priceChart?.map((item) => item.priceChart) ?? [],
+      data: chartSeriesNumber?.map((item) => item.priceChart) ?? [],
     },
   ],
   options: {

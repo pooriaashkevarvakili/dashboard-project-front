@@ -13,7 +13,6 @@ interface ApiResponse {
 export const getNews = async (): Promise<News[]> => {
   const response = await api.get<ApiResponse>("/news");
 
-  console.log("NEWS RESPONSE:", response.data);
 
   return response.data.data;
 };

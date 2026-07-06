@@ -15,7 +15,6 @@ interface ApiResponse {
 export const getStats = async (): Promise<Stats[]> => {
   const response = await api.get<ApiResponse>("/stats");
 
-  console.log("NEWS RESPONSE:", response.data);
 
   return response.data.data;
 };

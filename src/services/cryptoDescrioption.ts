@@ -16,7 +16,6 @@ interface ApiResponse {
 export const getcryptoDescription = async (): Promise<cryptoDescription[]> => {
   const response = await api.get<ApiResponse>("/cryptoDescription");
 
-  console.log("NEWS RESPONSE:", response.data);
 
   return response.data.data;
 };
