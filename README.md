@@ -1,42 +1,73 @@
 # 🚀 Crypto Dashboard Frontend
 
-A modern and responsive cryptocurrency dashboard built with **React**, **Vite**, and **Tailwind CSS**. The application provides real-time cryptocurrency market insights, portfolio tracking, and interactive dashboards through a clean and intuitive user interface.
+A modern, scalable, and production-ready cryptocurrency dashboard built with **React** and **Vite**. The application provides real-time cryptocurrency market insights, interactive analytics, portfolio management, and an intuitive user experience through a responsive dashboard interface.
+
+Designed with performance and maintainability in mind, the project leverages modern frontend technologies including **TanStack React Query** for efficient server-state management, **ApexCharts** for rich data visualization, and **Tailwind CSS** with **Ant Design** to deliver a clean and professional UI.
 
 ---
 
-## ✨ Features
+# ✨ Features
 
-* 📈 Real-time Cryptocurrency Market Dashboard
-* 💹 Live Price Monitoring
-* 📊 Interactive Charts & Analytics
+* 📊 Interactive Crypto Dashboard
+* 📈 Real-Time Cryptocurrency Market Data
+* 💹 Live Price Tracking
+* 📉 Historical Price Charts
+* 🥧 Portfolio Allocation Charts
+* 📊 Market Cap & Trading Volume Analytics
 * 💼 Portfolio Management
+* ⭐ Watchlist Management
 * 🔍 Search & Filter Cryptocurrencies
 * 👤 User Authentication
-* 🌙 Responsive Dashboard UI
-* ⚡ Fast Data Fetching with React Query
-* ✅ Form Validation with Yup
-* 🎨 Modern UI built with Tailwind CSS & Ant Design
-* 🔄 API Integration with NestJS Backend
-* 📱 Fully Responsive Design
+* 🔐 Protected Routes
+* ⚡ Fast Data Fetching with TanStack React Query
+* 🔄 Automatic Background Data Synchronization
+* 📡 Optimistic Updates & Smart Caching
+* 🎨 Modern UI with Tailwind CSS & Ant Design
+* 📱 Fully Responsive Layout
+* 📝 Form Validation with React Hook Form & Yup
+* 🔔 Toast Notifications
+* 🚀 High Performance with Vite
+* ♻️ Reusable Components & Custom Hooks
 
 ---
 
-# 🛠 Tech Stack
+# 🛠️ Tech Stack
 
-| Technology                   | Description                 |
-| ---------------------------- | --------------------------- |
-| React                        | Frontend Library            |
-| Vite                         | Build Tool                  |
-| TypeScript / JavaScript      | Programming Language        |
-| React Router DOM             | Routing                     |
-| React Query (TanStack Query) | Server State Management     |
-| Axios                        | HTTP Client                 |
-| Yup                          | Form Validation             |
-| React Hook Form              | Form Handling               |
-| Tailwind CSS                 | Utility-first CSS Framework |
-| Ant Design                   | UI Component Library        |
-| React Icons                  | Icons                       |
-| Recharts / Chart.js          | Data Visualization          |
+### Core
+
+* React
+* Vite
+* JavaScript (ES6+)
+
+### Routing
+
+* React Router DOM
+
+### API & State Management
+
+* TanStack React Query
+* Axios
+
+### Forms & Validation
+
+* React Hook Form
+* Yup
+
+### UI & Styling
+
+* Tailwind CSS
+* Ant Design
+* React Icons
+
+### Charts & Analytics
+
+* ApexCharts
+* React ApexCharts
+
+### Development
+
+* ESLint
+* Prettier
 
 ---
 
@@ -47,19 +78,22 @@ src/
 ├── api/
 ├── assets/
 ├── components/
+│   ├── charts/
 │   ├── common/
-│   ├── layout/
 │   ├── dashboard/
+│   ├── layout/
+│   ├── portfolio/
 │   └── crypto/
 ├── hooks/
 ├── layouts/
 ├── pages/
 ├── routes/
 ├── services/
-├── store/
-├── styles/
-├── utils/
+├── context/
 ├── validation/
+├── utils/
+├── constants/
+├── styles/
 ├── App.jsx
 └── main.jsx
 ```
@@ -71,7 +105,7 @@ src/
 Clone the repository
 
 ```bash
-git clone https://github.com/your-username/dashboard-project-frontend.git
+git clone https://github.com/pooriaashkevarvakili/dashboard-project-frontend.git
 ```
 
 Navigate to the project
@@ -104,7 +138,7 @@ VITE_API_URL=https://dashboard-project-backend-ljk7.onrender.com
 
 ---
 
-# ▶️ Running the Project
+# ▶️ Running the Application
 
 Development
 
@@ -112,13 +146,13 @@ Development
 npm run dev
 ```
 
-Build
+Production Build
 
 ```bash
 npm run build
 ```
 
-Preview Production Build
+Preview Production
 
 ```bash
 npm run preview
@@ -126,84 +160,112 @@ npm run preview
 
 ---
 
+# 📊 Dashboard Modules
+
+### Dashboard
+
+* Global Market Statistics
+* Market Overview
+* Trending Coins
+* Top Gainers & Losers
+
+### Cryptocurrency
+
+* Cryptocurrency List
+* Coin Details
+* Historical Price Analysis
+* Market Cap Statistics
+* Trading Volume Analytics
+
+### Portfolio
+
+* Portfolio Overview
+* Asset Allocation
+* Investment Tracking
+* Portfolio Performance
+
+### User
+
+* Login
+* Register
+* Profile Management
+* Protected Routes
+
+---
+
+# 📈 Interactive Charts
+
+The dashboard uses **ApexCharts** to deliver responsive and interactive visualizations.
+
+Available charts include:
+
+* 📈 Line Charts
+* 📊 Area Charts
+* 📉 Bar Charts
+* 🥧 Pie Charts
+* 🍩 Donut Charts
+* 📊 Portfolio Allocation
+* 📈 Market Performance
+* 📉 Historical Price Trends
+* 📊 Trading Volume
+* 💹 Market Capitalization
+
+---
+
 # 🌐 Backend API
 
-This application communicates with the Crypto Dashboard Backend API.
+Backend API
 
-Backend URL
-
-```text
+```
 https://dashboard-project-backend-ljk7.onrender.com
 ```
 
 Swagger Documentation
 
-```text
+```
 https://dashboard-project-backend-ljk7.onrender.com/dashboard-api-swagger
 ```
 
 ---
 
-# 📊 Dashboard Modules
-
-* Dashboard Overview
-* Cryptocurrency Market
-* Coin Details
-* Portfolio
-* Watchlist
-* Analytics
-* User Profile
-* Authentication
-
----
-
 # 🔐 Authentication
 
-The application supports secure JWT-based authentication.
+Authentication is implemented using JWT.
 
 Features include:
 
-* Login
-* Registration
+* User Registration
+* Secure Login
 * Protected Routes
-* Persistent Authentication
+* Persistent Sessions
 * Logout
+
+---
+
+# ⚡ Performance Optimizations
+
+* TanStack React Query Caching
+* Background Refetching
+* Lazy Loading
+* Code Splitting
+* Optimized API Requests
+* Vite Fast Refresh
+* Component Memoization
+* Custom Hooks
 
 ---
 
 # 🎨 UI Highlights
 
+* Modern Dashboard Design
 * Responsive Layout
 * Mobile Friendly
-* Modern Dashboard Design
-* Interactive Cards
-* Data Tables
-* Charts & Statistics
+* Interactive Data Tables
+* Analytics Cards
 * Loading Skeletons
-* Toast Notifications
+* Empty States
 * Error Boundaries
-
----
-
-# ⚡ Performance
-
-* Vite Fast Refresh
-* Lazy Loaded Pages
-* React Query Cache
-* Optimized API Requests
-* Component Reusability
-* Clean Folder Architecture
-
----
-
-# 📸 Screens
-
-* Dashboard
-* Market Overview
-* Coin Details
-* Portfolio
-* User Profile
-* Authentication Pages
+* Toast Notifications
 
 ---
 
@@ -220,20 +282,23 @@ The frontend can be deployed on:
 
 # 📈 Future Improvements
 
-* Dark / Light Theme
-* Multi-language Support
-* Real-time WebSocket Updates
+* Dark & Light Theme
+* Multi-language Support (i18n)
+* WebSocket Real-Time Price Updates
 * Price Alerts
-* Favorites & Watchlist Sync
-* Advanced Charts
-* PWA Support
-* Docker Deployment
+* Favorites Synchronization
+* AI Market Insights
+* News Integration
+* Advanced Portfolio Analytics
+* Progressive Web App (PWA)
+* Docker Support
+* CI/CD Pipeline
 
 ---
 
 # 👨‍💻 Author
 
-**Your Name**
+**Pooria Ashkevar Vakili**
 
 Frontend Developer
 
