@@ -10,6 +10,7 @@ import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import Portfolio from "./pages/Portfolio";
 import AssetDetails from "./pages/AssetDetails";
+import TradingTerminal from "./pages/TradingTerminal";
 
 function App() {
   return (
@@ -22,8 +23,12 @@ function App() {
 
           <Route path="/" element={<Layout />}>
           <Route path='assetDetails' element={<AssetDetails/>}/>
+
+          
             <Route index element={<Dashboard />} />
             <Route path="about" element={<About />} />
+                        <Route path="tradingTerminal" element={<TradingTerminal />} />
+
             <Route path="portfolio" element={<Portfolio/>}/>
             <Route path="contact" element={<Contact />} />
           </Route>

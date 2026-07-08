@@ -20,11 +20,10 @@ import WalletsTab from "./Components/Asset/tabs/WalletsTab";
 import NotesTab from "./Components/Asset/tabs/NotesTab";
 import ROITab from "./Components/Asset/tabs/RioTabs";
 
-import { mockOrders } from "./Components/Asset/mockData/mockOrders";
 import CoinInterview from "./Components/CoinInterview";
 import { useHistoryTable } from "../hooks/useHistoryTable";
 import { useWalletTable } from "../hooks/useWalletTable";
-
+import {useOrderTable} from '../hooks/useorderTable'
 const { TabPane } = Tabs;
 const { useBreakpoint } = Grid;
 
@@ -39,7 +38,7 @@ const AssetDetails: React.FC = () => {
   const [priceChange] = useState(2.35);
   const [isFavorite, setIsFavorite] = useState(false);
 
-
+const {data:orderTable}=useOrderTable()
   const totalInvested = 125000;
   const currentValue = 180675;
   const roi = ((currentValue - totalInvested) / totalInvested) * 100;
@@ -112,7 +111,7 @@ const AssetDetails: React.FC = () => {
               key="orders"
             >
               <OrderHistoryTab
-                orders={mockOrders}
+                orders={orderTable}
                 isMobile={isMobile}
                 isSmallMobile={isSmallMobile}
               />

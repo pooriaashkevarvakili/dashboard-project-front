@@ -10,7 +10,7 @@ const { Header, Sider, Content } = AntLayout;
 
 import { useImage } from "../hooks/useImage";
 import { RiDashboardFill} from "react-icons/ri";
-import { FaWallet } from "react-icons/fa6";
+import { FaChartLine, FaWallet } from "react-icons/fa6";
 import { FaHistory } from "react-icons/fa";
 
 export default function Layout() {
@@ -79,6 +79,12 @@ export default function Layout() {
     icon: <FaHistory />,
     label: <Link to="/assetDetails">تاریخچه سفارشات</Link>,
   },
+    {
+  key: "/tradingTerminal",
+  icon: <FaChartLine />, // یا FaChartBar
+  label: <Link to="/tradingTerminal">محیط معاملات</Link>,
+},
+
           ]}
         />
       </Sider>
