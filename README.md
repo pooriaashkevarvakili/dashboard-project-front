@@ -1,54 +1,248 @@
-# React + TypeScript + Vite
+# 🚀 Crypto Dashboard Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive cryptocurrency dashboard built with **React**, **Vite**, and **Tailwind CSS**. The application provides real-time cryptocurrency market insights, portfolio tracking, and interactive dashboards through a clean and intuitive user interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+* 📈 Real-time Cryptocurrency Market Dashboard
+* 💹 Live Price Monitoring
+* 📊 Interactive Charts & Analytics
+* 💼 Portfolio Management
+* 🔍 Search & Filter Cryptocurrencies
+* 👤 User Authentication
+* 🌙 Responsive Dashboard UI
+* ⚡ Fast Data Fetching with React Query
+* ✅ Form Validation with Yup
+* 🎨 Modern UI built with Tailwind CSS & Ant Design
+* 🔄 API Integration with NestJS Backend
+* 📱 Fully Responsive Design
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+# 🛠 Tech Stack
+
+| Technology                   | Description                 |
+| ---------------------------- | --------------------------- |
+| React                        | Frontend Library            |
+| Vite                         | Build Tool                  |
+| TypeScript / JavaScript      | Programming Language        |
+| React Router DOM             | Routing                     |
+| React Query (TanStack Query) | Server State Management     |
+| Axios                        | HTTP Client                 |
+| Yup                          | Form Validation             |
+| React Hook Form              | Form Handling               |
+| Tailwind CSS                 | Utility-first CSS Framework |
+| Ant Design                   | UI Component Library        |
+| React Icons                  | Icons                       |
+| Recharts / Chart.js          | Data Visualization          |
+
+---
+
+# 📁 Project Structure
+
+```text
+src/
+├── api/
+├── assets/
+├── components/
+│   ├── common/
+│   ├── layout/
+│   ├── dashboard/
+│   └── crypto/
+├── hooks/
+├── layouts/
+├── pages/
+├── routes/
+├── services/
+├── store/
+├── styles/
+├── utils/
+├── validation/
+├── App.jsx
+└── main.jsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# 📦 Installation
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+Clone the repository
+
+```bash
+git clone https://github.com/your-username/dashboard-project-frontend.git
 ```
+
+Navigate to the project
+
+```bash
+cd dashboard-project-frontend
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+or
+
+```bash
+yarn install
+```
+
+---
+
+# ⚙️ Environment Variables
+
+Create a `.env` file in the project root.
+
+```env
+VITE_API_URL=https://dashboard-project-backend-ljk7.onrender.com
+```
+
+---
+
+# ▶️ Running the Project
+
+Development
+
+```bash
+npm run dev
+```
+
+Build
+
+```bash
+npm run build
+```
+
+Preview Production Build
+
+```bash
+npm run preview
+```
+
+---
+
+# 🌐 Backend API
+
+This application communicates with the Crypto Dashboard Backend API.
+
+Backend URL
+
+```text
+https://dashboard-project-backend-ljk7.onrender.com
+```
+
+Swagger Documentation
+
+```text
+https://dashboard-project-backend-ljk7.onrender.com/dashboard-api-swagger
+```
+
+---
+
+# 📊 Dashboard Modules
+
+* Dashboard Overview
+* Cryptocurrency Market
+* Coin Details
+* Portfolio
+* Watchlist
+* Analytics
+* User Profile
+* Authentication
+
+---
+
+# 🔐 Authentication
+
+The application supports secure JWT-based authentication.
+
+Features include:
+
+* Login
+* Registration
+* Protected Routes
+* Persistent Authentication
+* Logout
+
+---
+
+# 🎨 UI Highlights
+
+* Responsive Layout
+* Mobile Friendly
+* Modern Dashboard Design
+* Interactive Cards
+* Data Tables
+* Charts & Statistics
+* Loading Skeletons
+* Toast Notifications
+* Error Boundaries
+
+---
+
+# ⚡ Performance
+
+* Vite Fast Refresh
+* Lazy Loaded Pages
+* React Query Cache
+* Optimized API Requests
+* Component Reusability
+* Clean Folder Architecture
+
+---
+
+# 📸 Screens
+
+* Dashboard
+* Market Overview
+* Coin Details
+* Portfolio
+* User Profile
+* Authentication Pages
+
+---
+
+# 🚀 Deployment
+
+The frontend can be deployed on:
+
+* Vercel
+* Netlify
+* Render
+* Firebase Hosting
+
+---
+
+# 📈 Future Improvements
+
+* Dark / Light Theme
+* Multi-language Support
+* Real-time WebSocket Updates
+* Price Alerts
+* Favorites & Watchlist Sync
+* Advanced Charts
+* PWA Support
+* Docker Deployment
+
+---
+
+# 👨‍💻 Author
+
+**Your Name**
+
+Frontend Developer
+
+GitHub: https://github.com/pooriaashkevarvakili
+
+LinkedIn: https://www.linkedin.com/in/pooriavakili
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
