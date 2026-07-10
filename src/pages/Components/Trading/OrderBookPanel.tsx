@@ -48,9 +48,9 @@ const OrderBookPanel: React.FC<OrderBookPanelProps> = ({ data = [] }) => {
       bordered={false}
     >
       <div className="flex flex-col gap-0.5">
-        <div className="flex justify-between text-[10px] text-gray-400 mb-1 px-1">
-          <span className="w-1/3 text-right">قیمت</span>
-          <span className="w-1/3 text-center">مقدار</span>
+        <div className="flex justify-between text-sm text-black mb-1 px-1">
+          <span className="w-1/3 text-right ">قیمت</span>
+          <span className="w-1/3 text-center ">مقدار</span>
           <span className="w-1/3 text-left">مجموع</span>
         </div>
 

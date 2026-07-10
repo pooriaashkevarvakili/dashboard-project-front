@@ -29,7 +29,7 @@ const MarketTradesPanel: React.FC<MarketTradesPanelProps> = ({ data = [] }) => {
       bodyStyle={{ padding: '6px 10px', maxHeight: '180px', overflowY: 'auto' }}
       bordered={false}
     >
-      <div className="flex justify-between text-[10px] text-gray-400 mb-1 px-1">
+      <div className="flex justify-between text-sm text-black mb-1 px-1">
         <span className="w-1/3 text-right">قیمت</span>
         <span className="w-1/3 text-center">مقدار</span>
         <span className="w-1/3 text-left">زمان</span>

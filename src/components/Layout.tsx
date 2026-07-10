@@ -11,7 +11,7 @@ const { Header, Sider, Content } = AntLayout;
 import { useImage } from "../hooks/useImage";
 import { RiDashboardFill} from "react-icons/ri";
 import { FaChartLine, FaWallet } from "react-icons/fa6";
-import { FaHistory } from "react-icons/fa";
+import { FaExchangeAlt, FaHistory } from "react-icons/fa";
 
 export default function Layout() {
   const location = useLocation();
@@ -83,6 +83,11 @@ export default function Layout() {
   key: "/tradingTerminal",
   icon: <FaChartLine />, // یا FaChartBar
   label: <Link to="/tradingTerminal">محیط معاملات</Link>,
+},
+{
+  key: "/walletDashboard",
+  icon: <FaExchangeAlt />, // یا FaChartBar
+  label: <Link to="/walletDashboard">کیف پول</Link>,
 },
 
           ]}

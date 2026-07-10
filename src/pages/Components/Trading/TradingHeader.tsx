@@ -10,7 +10,12 @@ const TradingHeader: React.FC = () => {
   const market = data?.[0];
 
   return (
-  <Header className="bg-white flex items-center justify-between px-3 md:px-6 h-14 md:h-16">
+  <Header className='    flex items-center justify-between
+    px-3 md:px-6 xl:px-8 2xl:px-10
+    h-14
+    md:h-16
+    xl:h-20
+    2xl:h-24'>
   <div className="flex items-center gap-2">
     <img
       src={market?.icon}
@@ -32,9 +37,7 @@ const TradingHeader: React.FC = () => {
     >
       {market?.lastPrice.toLocaleString()} USDT
     </div>
-    <div className="text-xs md:text-sm text-gray-500">
-      آخرین قیمت
-    </div>
+  
   </div>
 
   <div

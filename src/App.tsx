@@ -11,6 +11,7 @@ import Dashboard from "./pages/Dashboard";
 import Portfolio from "./pages/Portfolio";
 import AssetDetails from "./pages/AssetDetails";
 import TradingTerminal from "./pages/TradingTerminal";
+import WalletDashboard from "./pages/WalletDashboard";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route index element={<Dashboard />} />
             <Route path="about" element={<About />} />
                         <Route path="tradingTerminal" element={<TradingTerminal />} />
+                        <Route path="walletDashboard" element={<WalletDashboard />} />
 
             <Route path="portfolio" element={<Portfolio/>}/>
             <Route path="contact" element={<Contact />} />
