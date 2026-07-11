@@ -4,6 +4,8 @@ import { useMutation } from "@tanstack/react-query";
 import { toast, ToastContainer } from "react-toastify";
 import { signin } from "../services/signin";
 import { useImage } from "../hooks/useImage";
+import ReCAPTCHA from "react-google-recaptcha";
+import { useState } from "react";
 
 const { Title, Text } = Typography;
 
@@ -13,8 +15,11 @@ interface LoginData {
 }
 
 export default function Login() {
+  
   const navigate = useNavigate();
+  const [captchaToken, setCaptchaToken] = useState("");
 
+console.log(import.meta.env.VITE_RECAPTCHA_SITE_KEY);
   const { data: image, isLoading, isError } = useImage();
 
   const mutation = useMutation({
@@ -40,9 +45,18 @@ export default function Login() {
     },
   });
 
-  const onFinish = (values: LoginData) => {
-    mutation.mutate(values);
-  };
+const onFinish = (values: LoginData) => {
+   if (!captchaToken) {
+    toast.error("لطفاً ابتدا کپچا را تکمیل کنید.");
+    return;
+  }
+  mutation.mutate({
+    ...values,
+    captchaToken,
+  });
+  console.log(values);
+console.log(captchaToken);
+};
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -130,6 +144,12 @@ export default function Login() {
               <Text>
                 حساب ندارید؟ <Link to="/signup">ثبت‌نام</Link>
               </Text>
+            </div>
+            <div className="flex mt-2 items-center justify-center">
+      <ReCAPTCHA
+  sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+  onChange={(token) => setCaptchaToken(token ?? "")}
+/>
             </div>
           </Form>
         </Card>
