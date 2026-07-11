@@ -65,29 +65,34 @@ export default function Layout() {
       
           items={[
             {
-              key: "/",
+              key: "/layout/dashboard",
               icon: <RiDashboardFill />,
-              label: <Link to="/">داشبورد</Link>,
+              label: <Link to="/layout/dashboard">داشبورد</Link>,
             },
              {
-    key: "/portfolio",
+    key: "/layout/portfolio",
     icon: <FaWallet />,
-    label: <Link to="/portfolio">سبد دارایی</Link>,
+    label: <Link to="/layout/portfolio">سبد دارایی</Link>,
   },
            {
-    key: "/assetDetails",
+    key: "/layout/assetDetails",
     icon: <FaHistory />,
-    label: <Link to="/assetDetails">تاریخچه سفارشات</Link>,
+    label: <Link to="/layout/assetDetails">تاریخچه سفارشات</Link>,
   },
     {
-  key: "/tradingTerminal",
-  icon: <FaChartLine />, // یا FaChartBar
-  label: <Link to="/tradingTerminal">محیط معاملات</Link>,
+  key: "/layout/tradingTerminal",
+ icon: <FaChartLine />, // یا FaChartBar
+  label: <Link to="/layout/tradingTerminal">محیط معاملات</Link>,
 },
 {
-  key: "/walletDashboard",
+  key: "/layout/walletDashboard",
   icon: <FaExchangeAlt />, // یا FaChartBar
-  label: <Link to="/walletDashboard">کیف پول</Link>,
+  label: <Link to="/layout/walletDashboard">کیف پول</Link>,
+},
+{
+  key: "/layout/tradingHistory",
+  icon: <FaHistory />, // یا FaChartBar
+  label: <Link to="/layout/tradingHistory">تاریخچه   تراکنش ها</Link>,
 },
 
           ]}

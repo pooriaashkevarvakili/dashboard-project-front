@@ -70,7 +70,8 @@ const getAssets = (tab: string): WalletAsset[] => {
 
     
 
-      <AssetTable
+    <div className="w-full overflow-hidden">
+    <AssetTable
         activeTab={activeTab}
         assets={filteredAssets}
         showBalances={showBalances}
@@ -78,7 +79,8 @@ const getAssets = (tab: string): WalletAsset[] => {
         setSearchText={setSearchText}
         loading={loading}
         setLoading={setLoading}
-      />
+    />
+</div>
 
       <WalletFooter filteredAssets={filteredAssets} showBalances={showBalances} />
     </div>

@@ -11,6 +11,7 @@
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "noEmit": true,
+    
     "jsx": "react-jsx",
     "types": ["react", "react-dom"],   // <-- این خط را اضافه کنید
     "strict": true,
