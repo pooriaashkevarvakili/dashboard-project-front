@@ -13,6 +13,8 @@ import AssetDetails from "./pages/AssetDetails";
 import TradingTerminal from "./pages/TradingTerminal";
 import WalletDashboard from "./pages/WalletDashboard";
 import TradingHistory from "./pages/TransactionHistory";
+import Watchlist from "./pages/WatchList";
+import MarketsTable from "./pages/MarketsTable";
 
 function App() {
   return (
@@ -36,6 +38,9 @@ function App() {
             <Route path="tradingHistory" element={<TradingHistory />} />
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="contact" element={<Contact />} />
+              <Route path="watchList" element={<Watchlist />} />
+                            <Route path="markets" element={<MarketsTable />} />
+
           </Route>
         </Routes>
       </Router>

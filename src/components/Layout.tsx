@@ -10,7 +10,7 @@ const { Header, Sider, Content } = AntLayout;
 
 import { useImage } from "../hooks/useImage";
 import { RiDashboardFill} from "react-icons/ri";
-import { FaChartLine, FaWallet } from "react-icons/fa6";
+import { FaChartArea, FaChartLine, FaSwatchbook, FaWallet } from "react-icons/fa6";
 import { FaExchangeAlt, FaHistory } from "react-icons/fa";
 
 export default function Layout() {
@@ -93,6 +93,16 @@ export default function Layout() {
   key: "/layout/tradingHistory",
   icon: <FaHistory />, // یا FaChartBar
   label: <Link to="/layout/tradingHistory">تاریخچه   تراکنش ها</Link>,
+},
+{
+  key: "/layout/watchList",
+  icon: <FaSwatchbook />, // یا FaChartBar
+  label: <Link to="/layout/watchList">    لیست علاقه مندی</Link>,
+},
+{
+  key: "/layout/markets",
+  icon: <FaChartArea />, // یا FaChartBar
+  label: <Link to="/layout/markets">      بازار</Link>,
 },
 
           ]}

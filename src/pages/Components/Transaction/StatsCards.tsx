@@ -28,9 +28,11 @@ const StatsCards: React.FC<StatsCardsProps> = ({ }) => {
                   <span className="text-xs text-gray-400">vs last month</span>
                 </div>
               </div>
-              <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${card.color} flex items-center justify-center text-white shadow-lg`}>
-                {card.icon}
-              </div>
+            <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${card.color} flex items-center justify-center text-white shadow-lg`}>
+  <span className="text-2xl">
+    {card.icon}
+  </span>
+  </div>
             </div>
           </Card>
         </Col>
