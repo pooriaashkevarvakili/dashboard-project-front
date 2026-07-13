@@ -104,6 +104,11 @@ export default function Layout() {
   icon: <FaChartArea />, // یا FaChartBar
   label: <Link to="/layout/markets">      بازار</Link>,
 },
+{
+  key: "/layout/coinDetails",
+  icon: <FaChartLine />, // یا FaChartBar
+  label: <Link to="/layout/coinDetails">      توضیحات کوین</Link>,
+},
 
           ]}
         />

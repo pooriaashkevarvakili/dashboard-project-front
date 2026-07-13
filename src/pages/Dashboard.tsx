@@ -16,7 +16,7 @@ export default function Dashboard() {
   const { data: week } = useWeek();
   const { data: crypto } = useCryptoDescription();
 
-  const { data:chartSeriesNumber } = useChartSeries();
+  const { data:chartSeriesNumber } = useChartSeries('1W');
 
   const chartOptions: ApexOptions = {
     chart: {

@@ -15,6 +15,7 @@ import WalletDashboard from "./pages/WalletDashboard";
 import TradingHistory from "./pages/TransactionHistory";
 import Watchlist from "./pages/WatchList";
 import MarketsTable from "./pages/MarketsTable";
+import CoinDetails from "./pages/CoinDetails";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             <Route path="contact" element={<Contact />} />
               <Route path="watchList" element={<Watchlist />} />
                             <Route path="markets" element={<MarketsTable />} />
+                            <Route path="coinDetails" element={<CoinDetails />} />
 
           </Route>
         </Routes>
