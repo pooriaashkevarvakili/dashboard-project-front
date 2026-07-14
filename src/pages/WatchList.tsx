@@ -8,17 +8,16 @@ import { useCryptoTables } from '../hooks/useCryptoTables';
 const { Title, Text } = Typography;
 
 interface CoinData {
-  id: string;
+  key: string;
   name: string;
   symbol: string;
   price: number;
-  changePercent: number; // growth percentage
+  changePercent: number;
   alert: boolean;
-  sparklineData: number[]; // price history for chart
+  sparklineData: number[];
 }
 
 const Watchlist: React.FC = () => {
-  // Sample watchlist data
    
   
 const { data } = useCryptoTables();
@@ -27,23 +26,22 @@ const [watchlist, setWatchlist] = useState<CoinData[]>([]);
 const toggleAlert = (record: CoinData) => {
   setWatchlist((prev) =>
     prev.map((item) =>
-      item.id === record.id
+      item.key === record.key
         ? { ...item, alert: !item.alert }
         : item
     )
   );
 };
 useEffect(() => {
+  console.log(data);
+
   if (Array.isArray(data)) {
     setWatchlist(data);
   }
 }, [data]);
 
-  // Helper for growth color
   const getGrowthColor = (value: number) =>
     value >= 0 ? 'text-green-500' : 'text-red-500';
-
-  // Columns definition for Ant Design Table
   const columns = [
     {
       title: 'Coin',
@@ -70,11 +68,16 @@ useEffect(() => {
       title: 'Growth % (24h)',
       dataIndex: 'changePercent',
       key: 'changePercent',
-      render: (change: number) => (
-        <span className={`font-bold ${getGrowthColor(change)}`}>
-          {change > 0 ? '+' : ''}{change.toFixed(2)}%
-        </span>
-      ),
+     render: (_: any, record: CoinData) => {
+  const change = Number(record.changePercent ?? 0);
+
+  return (
+    <span className={`font-bold ${getGrowthColor(change)}`}>
+      {change > 0 ? "+" : ""}
+      {change.toFixed(2)}%
+    </span>
+  );
+},
     },
     {
       title: 'Price Alert',
@@ -127,7 +130,7 @@ useEffect(() => {
       <Table
         dataSource={watchlist}
         columns={columns}
-        rowKey="id"
+       rowKey="key"
         pagination={false}
         className="border border-gray-100 rounded-lg overflow-hidden"
         rowClassName="hover:bg-gray-50 transition-colors"

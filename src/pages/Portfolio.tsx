@@ -25,10 +25,7 @@ export default function Portfolio() {
           </Title>
           <Text type="secondary">Real-time market overview</Text>
         </div>
-        <Space wrap>
-          <Badge count="Live" color="green" />
-          <Button icon={<HiOutlineTrendingUp />}>Refresh</Button>
-        </Space>
+       
       </div>
 
       {/* Stats Cards */}

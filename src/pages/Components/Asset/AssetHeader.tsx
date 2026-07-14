@@ -50,19 +50,7 @@ const AssetHeader: React.FC<AssetHeaderProps> = ({
           </div>
         </Space>
       </Col>
-      <Col>
-        <Space size={isMobile ? "small" : "middle"}>
-          <Button icon={<FaSync />} onClick={() => {}} size={isMobile ? "small" : "middle"}>
-            {!isMobile && "Refresh"}
-          </Button>
-          <Button icon={<FaDownload />} size={isMobile ? "small" : "middle"}>
-            {!isMobile && "Export"}
-          </Button>
-          <Button type="primary" icon={<FaCog />} size={isMobile ? "small" : "middle"}>
-            {!isMobile && "Manage"}
-          </Button>
-        </Space>
-      </Col>
+     
     </Row>
   );
 };
