@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  direction: rtl;
+  font-family: "Vazirmatn", sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* ================= Typography ================= */
+
+.ant-typography,
+.ant-menu-item,
+.ant-btn,
+.ant-input,
+.ant-input-number,
+.ant-select,
+.ant-form,
+.ant-form-item-label > label {
+  font-family: "Vazirmatn", sans-serif !important;
+}
+
+.ant-form-item-label > label {
+  margin: 0;
+  font-size: 20px;
+}
+
+/* در صورت نیاز برای کل برنامه */
+div {
+  font-family: "Vazirmatn", sans-serif;
+}
+
+/* ================= Layout ================= */
+
+.ant-layout-header {
+  background: #fff !important;
+}
+
+.ant-layout-sider {
+  background: #fff !important;
+}
