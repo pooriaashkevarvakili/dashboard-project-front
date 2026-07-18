@@ -1,6 +1,6 @@
 // src/api/newsApi.ts
 import api from "../api/axios";
-import type { NewsItem } from "../pages/Components/News/data/types";
+import type { NewsItem } from "../types/news";
 
 
 export const getNews = async (): Promise<NewsItem[]> => {

@@ -115,6 +115,12 @@ export default function Layout() {
   label: <Link to="/layout/cryptoNewsDashboard">      اخبار </Link>,
 },
 
+{
+  key: "/layout/CryptoCalendar",
+  icon: <FaChartLine />, // یا FaChartBar
+  label: <Link to="/layout/CryptoCalendar">      تقویم </Link>,
+},
+
           ]}
         />
       </Sider>

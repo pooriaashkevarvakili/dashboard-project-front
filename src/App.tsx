@@ -17,6 +17,7 @@ import Watchlist from "./pages/WatchList";
 import MarketsTable from "./pages/MarketsTable";
 import CoinDetails from "./pages/CoinDetails";
 import CryptoNewsDashboard from "./pages/CryptoNewsDashboard";
+import CryptoCalendar from "./pages/CryptoCalendar";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
 
           {/* صفحات داخل Layout */}
           <Route path="layout" element={<Layout />}>
+
             <Route path='dashboard' element={<Dashboard />} />
             <Route path="assetDetails" element={<AssetDetails />} />
             <Route path="about" element={<About />} />
@@ -40,6 +42,7 @@ function App() {
             <Route path="tradingHistory" element={<TradingHistory />} />
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="contact" element={<Contact />} />
+            <Route path='cryptoCalendar' element={<CryptoCalendar/>} />
               <Route path="watchList" element={<Watchlist />} />
                             <Route path="markets" element={<MarketsTable />} />
                             <Route path="coinDetails" element={<CoinDetails />} />

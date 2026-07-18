@@ -8,7 +8,6 @@ import {
   FaDollarSign,
 } from "react-icons/fa";
 
-// Main Components
 import AssetHeader from "./Components/Asset/AssetHeader";
 import MarketStats from "./Components/Asset/MarketStatus";
 import PriceSummary from "./Components/Asset/PriceSummary";

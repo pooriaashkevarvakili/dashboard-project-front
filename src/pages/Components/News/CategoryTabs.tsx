@@ -1,6 +1,6 @@
 import React from "react";
 import { Tabs } from "antd";
-import type { CategoryKey } from "./data/types";
+import type { CategoryKey } from "../../../types/news";
 
 interface CategoryTabsProps {
   activeCategory: CategoryKey;

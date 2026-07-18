@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Button, Tag, Typography, Tooltip } from "antd";
 import { StarOutlined, StarFilled, FireOutlined } from "@ant-design/icons";
-import type { NewsItem } from "./data/types";
+import type { NewsItem } from "../../../types/news";
 
 const { Title, Text, Paragraph } = Typography;
 

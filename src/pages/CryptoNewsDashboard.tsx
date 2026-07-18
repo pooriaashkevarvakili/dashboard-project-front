@@ -17,7 +17,7 @@ import {
 } from "@ant-design/icons";
 import NewsCard from "./Components/News/NewsCard";
 import CategoryTabs from "./Components/News/CategoryTabs";
-import type {  CategoryKey } from "./Components/News/data/types";
+import type {  CategoryKey } from "../types/news";
 import { CATEGORY_COLOR } from "./Components/News/CategoryTabs";
 import { useNews } from "../hooks/useNewsCrypto";
 
@@ -78,7 +78,6 @@ const CryptoNewsDashboard: React.FC<{ className?: string }> = ({
       if (a.trending && !b.trending) return -1;
       if (!a.trending && b.trending) return 1;
 
-      // اگر timestamp وجود نداشته باشد، آن را ۰ در نظر می‌گیریم تا خطای NaN رخ ندهد
       return ((b.timestamp || 0) as number) - ((a.timestamp || 0) as number);
     });
   }, [news, activeCategory, showBookmarksOnly, bookmarkedIds]);
