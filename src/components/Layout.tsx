@@ -12,6 +12,7 @@ import { useImage } from "../hooks/useImage";
 import { RiDashboardFill} from "react-icons/ri";
 import { FaChartArea, FaChartLine, FaSwatchbook, FaWallet } from "react-icons/fa6";
 import { FaExchangeAlt, FaHistory } from "react-icons/fa";
+import { SiBitcoin } from "react-icons/si";
 
 export default function Layout() {
   const location = useLocation();
@@ -81,46 +82,50 @@ export default function Layout() {
   },
     {
   key: "/layout/tradingTerminal",
- icon: <FaChartLine />, // یا FaChartBar
+ icon: <FaChartLine />, 
   label: <Link to="/layout/tradingTerminal">محیط معاملات</Link>,
 },
 {
   key: "/layout/walletDashboard",
-  icon: <FaExchangeAlt />, // یا FaChartBar
+  icon: <FaExchangeAlt />, 
   label: <Link to="/layout/walletDashboard">کیف پول</Link>,
 },
 {
   key: "/layout/tradingHistory",
-  icon: <FaHistory />, // یا FaChartBar
+  icon: <FaHistory />, 
   label: <Link to="/layout/tradingHistory">تاریخچه   تراکنش ها</Link>,
 },
 {
   key: "/layout/watchList",
-  icon: <FaSwatchbook />, // یا FaChartBar
+  icon: <FaSwatchbook />, 
   label: <Link to="/layout/watchList">    لیست علاقه مندی</Link>,
 },
 {
   key: "/layout/markets",
-  icon: <FaChartArea />, // یا FaChartBar
+  icon: <FaChartArea />, 
   label: <Link to="/layout/markets">      بازار</Link>,
 },
 {
   key: "/layout/coinDetails",
-  icon: <FaChartLine />, // یا FaChartBar
+  icon: <FaChartLine />, 
   label: <Link to="/layout/coinDetails">      توضیحات کوین</Link>,
 },
 {
   key: "/layout/cryptoNewsDashboard",
-  icon: <FaChartLine />, // یا FaChartBar
+  icon: <FaChartLine />,
   label: <Link to="/layout/cryptoNewsDashboard">      اخبار </Link>,
 },
 
 {
   key: "/layout/CryptoCalendar",
-  icon: <FaChartLine />, // یا FaChartBar
+  icon: <FaChartLine />, 
   label: <Link to="/layout/CryptoCalendar">      تقویم </Link>,
 },
-
+{
+  key: "/layout/alertDoshboard",
+  icon: <SiBitcoin />, 
+  label: <Link to="/layout/alertDoshboard">      هشدارهای کریپتو </Link>,
+},
           ]}
         />
       </Sider>

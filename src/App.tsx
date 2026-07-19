@@ -1,6 +1,11 @@
 import { ConfigProvider } from "antd";
 import faIR from "antd/locale/fa_IR";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 import Layout from "./components/Layout";
 import About from "./pages/About";
@@ -18,6 +23,7 @@ import MarketsTable from "./pages/MarketsTable";
 import CoinDetails from "./pages/CoinDetails";
 import CryptoNewsDashboard from "./pages/CryptoNewsDashboard";
 import CryptoCalendar from "./pages/CryptoCalendar";
+import AlertDashboard from "./pages/AlertDoshboard";
 
 function App() {
   return (
@@ -33,8 +39,7 @@ function App() {
 
           {/* صفحات داخل Layout */}
           <Route path="layout" element={<Layout />}>
-
-            <Route path='dashboard' element={<Dashboard />} />
+            <Route path="dashboard" element={<Dashboard />} />
             <Route path="assetDetails" element={<AssetDetails />} />
             <Route path="about" element={<About />} />
             <Route path="tradingTerminal" element={<TradingTerminal />} />
@@ -42,12 +47,15 @@ function App() {
             <Route path="tradingHistory" element={<TradingHistory />} />
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="contact" element={<Contact />} />
-            <Route path='cryptoCalendar' element={<CryptoCalendar/>} />
-              <Route path="watchList" element={<Watchlist />} />
-                            <Route path="markets" element={<MarketsTable />} />
-                            <Route path="coinDetails" element={<CoinDetails />} />
-                            <Route path="cryptoNewsDashboard" element={<CryptoNewsDashboard />} />
-
+            <Route path="cryptoCalendar" element={<CryptoCalendar />} />
+            <Route path="watchList" element={<Watchlist />} />
+            <Route path="alertDoshboard" element={<AlertDashboard />} />
+            <Route path="markets" element={<MarketsTable />} />
+            <Route path="coinDetails" element={<CoinDetails />} />
+            <Route
+              path="cryptoNewsDashboard"
+              element={<CryptoNewsDashboard />}
+            />
           </Route>
         </Routes>
       </Router>

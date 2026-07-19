@@ -53,11 +53,10 @@ export default function Signup() {
     <div className="min-h-screen flex bg-gray-100">
       <ToastContainer />
 
-      {/* LEFT SIDE */}
       <div className="hidden lg:flex w-1/2 bg-blue-600 items-center justify-center">
         <div className="text-center text-white px-10">
           <img
-            className="w-[40%] mx-auto mb-6"
+            className="w-[40%] mx-auto mb-6 rounded-full"
             src={image}
             alt="logo"
           />
@@ -72,13 +71,12 @@ export default function Signup() {
         </div>
       </div>
 
-      {/* RIGHT SIDE */}
       <div className="flex flex-1 items-center justify-center p-5">
         <Card className="w-full max-w-md shadow-2xl rounded-3xl">
 
           <div className="text-center mb-8">
             <Title level={2}>ثبت‌نام</Title>
-            <Text className="text-gray-500">
+            <Text className="text-gray-500 !text-lg">
               اطلاعات خود را وارد کنید
             </Text>
           </div>
@@ -126,9 +124,9 @@ export default function Signup() {
               ایجاد حساب
             </Button>
 
-            <div className="text-center mt-4">
-              <Text>
-                حساب دارید؟ <Link to="/login">ورود</Link>
+            <div className="text-center  mt-4">
+              <Text className="!text-sm">
+                حساب دارید؟ <Link className="text-base" to="/login">ورود</Link>
               </Text>
             </div>
 

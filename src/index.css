@@ -73,7 +73,6 @@ body {
   }
 }
 
-/* ================= Typography ================= */
 
 .ant-typography,
 .ant-menu-item,
@@ -91,12 +90,10 @@ body {
   font-size: 20px;
 }
 
-/* در صورت نیاز برای کل برنامه */
 div {
   font-family: "Vazirmatn", sans-serif;
 }
 
-/* ================= Layout ================= */
 
 .ant-layout-header {
   background: #fff !important;

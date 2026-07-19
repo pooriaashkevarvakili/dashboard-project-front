@@ -89,7 +89,7 @@ export default function Dashboard() {
             داشبورد کریپتو
           </Title>
 
-          <Text type="secondary">نمای کلی از وضعیت بازار و سبد دارایی</Text>
+          <Text>نمای کلی از وضعیت بازار و سبد دارایی</Text>
         </div>
 
         <Button type="primary">بروزرسانی</Button>
@@ -104,7 +104,7 @@ export default function Dashboard() {
               <Card>
                 <div className="flex items-center justify-between">
                   <div>
-                    <Text style={{ fontSize: 20 }} type="secondary">
+                    <Text style={{ fontSize: 20 }} >
                       {item.title}
                     </Text>
 

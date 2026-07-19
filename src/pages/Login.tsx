@@ -73,7 +73,7 @@ console.log(captchaToken);
       {/* LEFT SIDE */}
       <div className="hidden lg:flex w-1/2 bg-blue-600 items-center justify-center">
         <div className="text-center text-white px-10">
-          <img className="w-[40%] mx-auto mb-6" src={image} alt="logo" />
+          <img className="w-[40%] rounded-full mx-auto mb-6" src={image} alt="logo" />
 
           <Title level={2} style={{ color: "white" }}>
             ورود به حساب کاربری
@@ -91,7 +91,7 @@ console.log(captchaToken);
           <div className="text-center mb-8">
             <Title level={2}>ورود</Title>
 
-            <Text className="text-gray-500">اطلاعات خود را وارد کنید</Text>
+            <Text className="!text-base text-gray-500">اطلاعات خود را وارد کنید</Text>
           </div>
 
           <Form layout="vertical" onFinish={onFinish}>
@@ -141,8 +141,8 @@ console.log(captchaToken);
             </Button>
 
             <div className="text-center mt-4">
-              <Text>
-                حساب ندارید؟ <Link to="/signup">ثبت‌نام</Link>
+              <Text className="!text-sm">
+                حساب ندارید؟ <Link className="!text-lg" to="/signup">ثبت‌نام</Link>
               </Text>
             </div>
             <div className="flex mt-2 items-center justify-center">
