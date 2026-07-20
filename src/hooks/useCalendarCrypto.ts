@@ -13,11 +13,10 @@ export const useCalendarCrypto = () => {
         return result;
       } catch (err) {
         console.error('❌ خطا در fetch:', err);
-        throw err; // مهم: خطا را برای useQuery پرتاب کنید
+        throw err; 
       }
     },
     staleTime: 0,
     retry: 1,
-    // ❌ onError و onSuccess حذف شدند
   });
 };

@@ -11,13 +11,13 @@ export const useAlertGet = () => {
     refetchOnWindowFocus: false,
   });
 
-  const dataWithId: Alert[] = query.data?.map((item, index) => ({
+  const dataWithId: Alert[] = query.data?.map((item) => ({
     symbol: item.symbol,
-    indicator: item.indicator as Indicator, // cast صریح
-    condition: item.condition as Condition, // cast صریح
+    indicator: item.indicator as Indicator, 
+    condition: item.condition as Condition, 
     value: item.value,
-    id: `alert-${index}-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
-    active: true,
+       icon: item.icon,
+
   })) ?? [];
 
   return {

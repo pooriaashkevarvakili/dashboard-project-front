@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FiBell, FiPlus, FiX } from "react-icons/fi";
 
 import PriceChart from "../pages/Components/Alert/PriceChart";
 import NewAlertForm from "../pages/Components/Alert/NewAlertForm";
 import AlertsList from "../pages/Components/Alert/AlertsList";
 
-import type { Alert, Indicator, Condition } from "../types/Alert";
+import type {  Indicator, Condition } from "../types/Alert";
 
 import { useChartData } from "../hooks/useChartData";
 import { useSymbols } from "../hooks/useSymbols";
@@ -15,47 +15,28 @@ import { useAlertGet } from "../hooks/useAlertGet";
 import AlertPost from "../services/ALertPost";
 
 const AlertDashboard: React.FC = () => {
-  // همه هوک‌ها در بالاترین سطح
   const {
     data: serverAlerts,
-    isLoading: alertsLoading,
-    isError: alertsError,
-    error: alertsErrorObj,
+  
     refetch,
   } = useAlertGet();
 
-  const [alerts, setAlerts] = useState<Alert[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const {
     data: symbols = [],
-    isLoading: symbolsLoading,
   } = useSymbols();
 
   const [selectedSymbol, setSelectedSymbol] = useState("BTC");
 
   const {
     data: chartData = [],
-    isLoading: chartLoading,
-    isError: chartError,
-    error: chartErrorObj,
   } = useChartData(selectedSymbol);
 
   const [newSymbol, setNewSymbol] = useState("BTC");
   const [newIndicator, setNewIndicator] = useState<Indicator>("Price");
   const [newCondition, setNewCondition] = useState<Condition>(">");
   const [newValue, setNewValue] = useState(0);
-
-  // همگام‌سازی داده‌های سرور با state محلی
-  useEffect(() => {
-    if (serverAlerts) {
-      setAlerts(serverAlerts);
-    } else {
-      setAlerts([]);
-    }
-  }, [serverAlerts]);
-
-  // اضافه کردن هشدار جدید
   const addAlert = async () => {
     if (!newValue || newValue <= 0) return;
 
@@ -69,52 +50,22 @@ const AlertDashboard: React.FC = () => {
     try {
       await AlertPost(newAlertData);
 
-      const newAlert: Alert = {
-        ...newAlertData,
-        id: `alert-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
-        active: true,
-      };
-      setAlerts((prev) => [...prev, newAlert]);
+
 
       setNewValue(0);
       setIsModalOpen(false);
-      refetch(); // به‌روزرسانی از سرور
+      refetch(); 
     } catch (err) {
-      // مدیریت خطا (مثلاً با toast)
+   
     }
   };
 
-  const deleteAlert = (id: string) => {
-    setAlerts((prev) => prev.filter((item) => item.id !== id));
-  };
 
-  const toggleAlert = (id: string) => {
-    setAlerts((prev) =>
-      prev.map((item) =>
-        item.id === id ? { ...item, active: !item.active } : item
-      )
-    );
-  };
 
-  // وضعیت بارگذاری
-  if (alertsLoading) {
-    return <div className="p-10 text-center">⏳ Loading alerts...</div>;
-  }
+
+
 
   // وضعیت خطا
-  if (alertsError) {
-    return (
-      <div className="p-10 text-center text-red-500">
-        ❌ Error loading alerts: {(alertsErrorObj as Error)?.message || "Unknown error"}
-        <button
-          onClick={() => refetch()} // ✅ اصلاح شده: استفاده از تابع handler
-          className="ml-4 px-4 py-2 bg-indigo-600 text-white rounded"
-        >
-          Retry
-        </button>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-4 md:p-6">
@@ -146,9 +97,7 @@ const AlertDashboard: React.FC = () => {
 
         {/* Symbols */}
         <div className="mb-6 flex flex-wrap gap-2 rounded-xl bg-white dark:bg-gray-800 p-2 shadow">
-          {symbolsLoading ? (
-            <span className="px-4 py-2">Loading...</span>
-          ) : (
+           {
             symbols.map((symbol: string) => (
               <button
                 key={symbol}
@@ -162,28 +111,19 @@ const AlertDashboard: React.FC = () => {
                 {symbol}
               </button>
             ))
-          )}
+          }
         </div>
 
         {/* Chart */}
         <div className="mb-8">
-          {chartLoading ? (
-            <div className="h-[320px] rounded-2xl bg-white dark:bg-gray-800 flex items-center justify-center shadow">
-              Loading chart...
-            </div>
-          ) : chartError ? (
-            <div className="h-[320px] rounded-2xl bg-white dark:bg-gray-800 flex items-center justify-center text-red-500 shadow">
-              {(chartErrorObj as Error)?.message ?? "Error loading chart"}
-            </div>
-          ) : (
+        {
             <PriceChart symbol={selectedSymbol} chartData={chartData} />
-          )}
+          }
         </div>
 
         <AlertsList
-          alerts={alerts}
-          toggleAlert={toggleAlert}
-          deleteAlert={deleteAlert}
+  alerts={serverAlerts}
+          
         />
       </div>
 

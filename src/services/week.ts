@@ -1,7 +1,9 @@
 import api from "../api/axios";
 
 export interface Week {
-   week: string;
+  key: number;
+  week: string;
+  number: string;
 }
 
 interface ApiResponse {

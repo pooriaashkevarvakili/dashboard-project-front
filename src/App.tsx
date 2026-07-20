@@ -24,6 +24,7 @@ import CoinDetails from "./pages/CoinDetails";
 import CryptoNewsDashboard from "./pages/CryptoNewsDashboard";
 import CryptoCalendar from "./pages/CryptoCalendar";
 import AlertDashboard from "./pages/AlertDoshboard";
+import Analize from "./pages/Analize";
 
 function App() {
   return (
@@ -55,6 +56,10 @@ function App() {
             <Route
               path="cryptoNewsDashboard"
               element={<CryptoNewsDashboard />}
+            />
+              <Route
+              path="analize"
+              element={<Analize />}
             />
           </Route>
         </Routes>

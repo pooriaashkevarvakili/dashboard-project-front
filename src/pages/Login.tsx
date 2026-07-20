@@ -79,7 +79,7 @@ console.log(captchaToken);
             ورود به حساب کاربری
           </Title>
 
-          <Text style={{ color: "white" }}>
+          <Text className="!text-lg" style={{ color: "white" }}>
             به سامانه مدیریت اطلاعات خوش آمدید
           </Text>
         </div>

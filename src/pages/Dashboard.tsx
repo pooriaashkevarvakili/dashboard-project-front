@@ -1,4 +1,4 @@
-import { Card, Row, Col, Typography, Button, Table, List, Tag } from "antd";
+import { Card, Row, Col, Typography, Table, List, Tag } from "antd";
 
 import { FaWallet, FaBitcoin, FaEthereum } from "react-icons/fa6";
 
@@ -91,8 +91,6 @@ export default function Dashboard() {
 
           <Text>نمای کلی از وضعیت بازار و سبد دارایی</Text>
         </div>
-
-        <Button type="primary">بروزرسانی</Button>
       </div>
 
       <Row gutter={[16, 16]}>

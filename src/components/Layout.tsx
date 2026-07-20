@@ -126,6 +126,11 @@ export default function Layout() {
   icon: <SiBitcoin />, 
   label: <Link to="/layout/alertDoshboard">      هشدارهای کریپتو </Link>,
 },
+{
+  key: "/layout/analize",
+  icon: <SiBitcoin />, 
+  label: <Link to="/layout/analize">       انالیز </Link>,
+},
           ]}
         />
       </Sider>
