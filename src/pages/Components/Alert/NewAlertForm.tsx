@@ -153,7 +153,6 @@ const NewAlertForm: React.FC<NewAlertFormProps> = ({
           {errors.symbol && <div className={errorStyle}>{errors.symbol}</div>}
         </div>
 
-        {/* Indicator */}
         <div>
           <label className="mb-2 block text-sm font-medium text-gray-600 dark:text-gray-300">
             اندیکاتور
@@ -174,7 +173,6 @@ const NewAlertForm: React.FC<NewAlertFormProps> = ({
           {errors.indicator && <div className={errorStyle}>{errors.indicator}</div>}
         </div>
 
-        {/* Condition & Value */}
         <div className="grid grid-cols-3 gap-4">
           <div>
             <label className="mb-2 block text-sm font-medium text-gray-600 dark:text-gray-300">
@@ -215,7 +213,6 @@ const NewAlertForm: React.FC<NewAlertFormProps> = ({
         </div>
       </div>
 
-      {/* Footer */}
       <div className="border-t border-gray-100 dark:border-gray-700 p-6">
         <button
           onClick={handleCreateAlert}
