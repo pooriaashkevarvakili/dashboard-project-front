@@ -43,7 +43,6 @@ const NewAlertForm: React.FC<NewAlertFormProps> = ({
     value?: string;
   }>({});
 
-  // اسکیماهای اعتبارسنجی (همان اسکیمای قبلی)
   const alertSchema = yup.object({
     symbol: yup.string().required("لطفاً یک نماد انتخاب کنید."),
     indicator: yup
@@ -77,7 +76,6 @@ const NewAlertForm: React.FC<NewAlertFormProps> = ({
         { abortEarly: false }
       );
 
-      // اگر اعتبارسنجی موفق بود، درخواست ارسال شود
       await AlertPost({
         symbol: newSymbol,
         indicator: newIndicator,
@@ -86,9 +84,8 @@ const NewAlertForm: React.FC<NewAlertFormProps> = ({
       });
 
       toast.success("✅ هشدار جدید اضافه شد");
-      addAlert(); // پاک کردن فرم یا به‌روزرسانی لیست
+      addAlert();  
     } catch (err: any) {
-      // خطاهای اعتبارسنجی yup
       if (err.name === "ValidationError") {
         const fieldErrors: Record<string, string> = {};
         err.inner.forEach((e: yup.ValidationError) => {
@@ -98,15 +95,12 @@ const NewAlertForm: React.FC<NewAlertFormProps> = ({
         });
         setErrors(fieldErrors);
 
-        // نمایش اولین خطا به صورت توستر (اختیاری)
         toast.error(err.errors[0]);
         return;
       }
 
-      // خطاهای سرور یا سایر خطاها
       console.error("Error in AlertPost:", err);
 
-      // اگر پاسخ سرور دارای پیام خطا باشد، نمایش داده شود
       const errorMessage =
         err.response?.data?.message ||
         err.message ||
@@ -117,7 +111,6 @@ const NewAlertForm: React.FC<NewAlertFormProps> = ({
 
   return (
     <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-lg">
-      {/* Header */}
       <div className="flex items-center gap-3 border-b border-gray-100 dark:border-gray-700 px-6 py-5">
         <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-100 dark:bg-indigo-900/40">
           <FiBell className="text-xl text-indigo-600" />

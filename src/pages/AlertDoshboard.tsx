@@ -59,14 +59,6 @@ const AlertDashboard: React.FC = () => {
    
     }
   };
-
-
-
-
-
-
-  // وضعیت خطا
-
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
@@ -88,7 +80,7 @@ const AlertDashboard: React.FC = () => {
 
           <button
             onClick={() => setIsModalOpen(true)}
-            className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl shadow-lg transition flex items-center gap-2"
+            className="bg-orange-500 hover:bg-indigo-700 !text-white px-6 py-3 rounded-xl shadow-lg transition flex items-center gap-2"
           >
             <FiPlus />
             New Alert
