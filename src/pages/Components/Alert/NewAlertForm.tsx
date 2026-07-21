@@ -124,9 +124,7 @@ const NewAlertForm: React.FC<NewAlertFormProps> = ({
         </div>
       </div>
 
-      {/* Body */}
       <div className="space-y-6 p-6">
-        {/* Symbol */}
         <div>
           <label className="mb-2 block text-sm font-medium text-gray-600 dark:text-gray-300">
             نماد معاملاتی
@@ -135,7 +133,6 @@ const NewAlertForm: React.FC<NewAlertFormProps> = ({
             value={newSymbol}
             onChange={(e) => {
               setNewSymbol(e.target.value);
-              // پاک کردن خطای این فیلد هنگام تغییر
               setErrors((prev) => ({ ...prev, symbol: undefined }));
             }}
             className={inputStyle}
@@ -218,7 +215,7 @@ const NewAlertForm: React.FC<NewAlertFormProps> = ({
           onClick={handleCreateAlert}
           className="
             flex w-full items-center justify-center gap-2 rounded-xl
-            bg-indigo-600 px-5 py-3 text-sm font-semibold text-white
+            bg-orange-500 px-5 py-3 text-sm font-semibold !text-white
             transition-all hover:bg-indigo-700 hover:shadow-lg
             active:scale-[0.98]
           "
