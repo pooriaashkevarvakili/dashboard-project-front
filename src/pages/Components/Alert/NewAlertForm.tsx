@@ -35,7 +35,6 @@ const NewAlertForm: React.FC<NewAlertFormProps> = ({
   setNewValue,
   addAlert,
 }) => {
-  // استیت برای نگهداری خطاهای هر فیلد
   const [errors, setErrors] = useState<{
     symbol?: string;
     indicator?: string;
