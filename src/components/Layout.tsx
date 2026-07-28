@@ -131,6 +131,11 @@ export default function Layout() {
   icon: <SiBitcoin />, 
   label: <Link to="/layout/analize">       انالیز </Link>,
 },
+{
+  key: "/layout/copyTrading",
+  icon: <SiBitcoin />, 
+  label: <Link to="/layout/copyTrading">       انالیز </Link>,
+},
           ]}
         />
       </Sider>

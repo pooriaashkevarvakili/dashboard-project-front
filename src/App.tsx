@@ -25,20 +25,19 @@ import CryptoNewsDashboard from "./pages/CryptoNewsDashboard";
 import CryptoCalendar from "./pages/CryptoCalendar";
 import AlertDashboard from "./pages/AlertDoshboard";
 import Analize from "./pages/Analize";
+import ApiKeysManager from "./pages/CopyTrading";
+import CopyTrading from "./pages/CopyTrading";
 
 function App() {
   return (
     <ConfigProvider direction="rtl" locale={faIR}>
       <Router>
         <Routes>
-          {/* مسیر اصلی به Signup هدایت می‌شود */}
           <Route path="/" element={<Navigate to="/login" replace />} />
 
-          {/* صفحات ورود و ثبت‌نام */}
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
 
-          {/* صفحات داخل Layout */}
           <Route path="layout" element={<Layout />}>
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="assetDetails" element={<AssetDetails />} />
@@ -60,6 +59,10 @@ function App() {
               <Route
               path="analize"
               element={<Analize />}
+            />
+             <Route
+              path="copyTrading"
+              element={<CopyTrading />}
             />
           </Route>
         </Routes>
