@@ -13,7 +13,7 @@ import { RiDashboardFill} from "react-icons/ri";
 import { FaChartArea, FaChartLine, FaSwatchbook, FaWallet } from "react-icons/fa6";
 import { FaExchangeAlt, FaHistory } from "react-icons/fa";
 import { SiBitcoin } from "react-icons/si";
-
+ import {MdContentCopy} from 'react-icons/md'
 export default function Layout() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -133,17 +133,15 @@ export default function Layout() {
 },
 {
   key: "/layout/copyTrading",
-  icon: <SiBitcoin />, 
-  label: <Link to="/layout/copyTrading">       انالیز </Link>,
+  icon: <MdContentCopy />, 
+  label: <Link to="/layout/copyTrading">       تریدینگ </Link>,
 },
           ]}
         />
       </Sider>
 
-      {/* MAIN */}
       <AntLayout>
 
-        {/* HEADER */}
       <Header
   style={{
     display: "flex",

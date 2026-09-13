@@ -83,7 +83,7 @@ const AlertDashboard: React.FC = () => {
             className="bg-orange-500 hover:bg-indigo-700 !text-white px-6 py-3 rounded-xl shadow-lg transition flex items-center gap-2"
           >
             <FiPlus />
-            New Alert
+            نوتیف جدید
           </button>
         </div>
 
