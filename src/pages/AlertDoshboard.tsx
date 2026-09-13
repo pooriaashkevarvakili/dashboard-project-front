@@ -87,7 +87,6 @@ const AlertDashboard: React.FC = () => {
           </button>
         </div>
 
-        {/* Symbols */}
         <div className="mb-6 flex flex-wrap gap-2 rounded-xl bg-white dark:bg-gray-800 p-2 shadow">
            {
             symbols.map((symbol: string) => (
@@ -106,7 +105,6 @@ const AlertDashboard: React.FC = () => {
           }
         </div>
 
-        {/* Chart */}
         <div className="mb-8">
         {
             <PriceChart symbol={selectedSymbol} chartData={chartData} />
